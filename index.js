@@ -1,6 +1,19 @@
 var rect = require('./rectangle');
 
+function solveRect(l,b){
+ console.log("Solving for rectangle")
+ rect(l,b,(err,rectangle)=>{
+     if(err){
+         console.log(err.message);
+     }
+     else{
+         console.log("Area is" ,rectangle.area());
+         console.log("Perimeter is ",rectangle.perimeter());
+     }
 
+ })
 
-console.log("The Area of rectangle is " + rect.area(3,5))
-console.log("The perimeter of rectangle is " + rect.perimeter(3,5));
+}
+
+solveRect(5,9)
+solveRect(-3,4);
