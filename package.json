@@ -18,6 +18,7 @@
   "homepage": "https://github.com/shakti-prog/NodeJs_Course#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "mongodb": "^4.1.0",
     "nodemon": "^2.0.12"
   }
 }
