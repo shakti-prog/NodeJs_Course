@@ -6,6 +6,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
 const dishRouter = require('./routes/dishRouter');
+const promoRouter = require('./routes/promoRouter');
+const leaderRouter = require('./routes/leaderRouter');
 
 
 app.use(morgan('dev'));
@@ -15,24 +17,11 @@ app.use(bodyParser.json());
 
 
 app.use('/dishes',dishRouter);
+app.use('/promo',promoRouter);
+app.use('/leader',leaderRouter);
 
 
-app.get('/dishes/:dishId',(req,res,next)=>{
-    res.end("Will send " + req.params.dishId);
-})
 
-app.post('/dishes/:dishId',(req,res,next)=>{
-    res.statusCode = 403;
-    res.end("Cannot do this");
-})
-
-app.put('/dishes/:dishId',(req,res,next)=>{
-    res.end("Will update" + req.params.dishId);
-})
-
-app.delete('/dishes/:dishId',(req,res,next)=>{
-    res.end("Will delete this dish " + req.params.dishId);
-})
 
 
 app.use((req,res,next)=>{
